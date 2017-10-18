@@ -5,8 +5,8 @@
 // once below
 const siteMetadata = {  
   environment: 'production', //hard coded values
-  client: 'caliastudio',  //hard coded values
-  brand: 'caliastudio', //hard coded values
+  client: 'bv_curation_sample',  //hard coded values
+  brand: 'bv_curation_sample', //hard coded values
   bvProduct: 'Curations' //hard coded values
 };
 
@@ -27,9 +27,6 @@ export function pageViewProduct(featureSpecifics) {
   
 }
 export function pageViewCategory(featureSpecifics) {
-// TO DO REMOVE
-  console.log('pageViewCategory');
-// TO DO REMOVE
   var pageViewData = {
     bvProduct: siteMetadata.bvProduct,
     brand: siteMetadata.brand,
@@ -39,9 +36,6 @@ export function pageViewCategory(featureSpecifics) {
 BV.pixel.trackPageView(pageViewData);
 }
 export function impression(contentId) {
-// TO DO REMOVE
-  console.log('impression');
-// TO DO REMOVE
   var impressionObject = {
     contentId: contentId,
     bvProduct1: siteMetadata.bvProduct,
@@ -52,11 +46,7 @@ export function impression(contentId) {
     impressionObject
   );
 }
-export function inView() {
-// TO DO REMOVE
-console.log('inView-FeatureUse');
-// TO DO REMOVE
-  
+export function inView() {  
   var inViewData = {
     bvProduct: siteMetadata.bvProduct,
     brand: siteMetadata.brand

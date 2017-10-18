@@ -29,11 +29,11 @@ npm start
 
 What is the sample doing?
 -------------------------
-The sample makes an REST API call to the Curations enpoint and iterates over the results and builds an HTML grid.  Upon rendering the page, the [analytics impression event](https://developer.bazaarvoice.com/curations-api/bv-pixel/product-display-page-overview/passive-analytic-events#trackimpression()) is executed. As a user interacts with the HTML page (i.e. invoke a modal of the image) the correct [feature used](https://developer.bazaarvoice.com/curations-api/bv-pixel/product-display-page-overview/featured-used-events) are shown. 
+The sample makes an REST API call to the Curations enpoint and iterates over the results and builds an Curations image grid.  Upon rendering the page, several [analytics impression events](https://developer.bazaarvoice.com/curations-api/bv-pixel/product-display-page-overview/passive-analytic-events#trackimpression()) are executed. As a user interacts with the HTML page (i.e. invoke a modal of the image) the correct [feature used](https://developer.bazaarvoice.com/curations-api/bv-pixel/product-display-page-overview/featured-used-events) are shown. 
 
 All the analytics events are captured in the [Bazaarvoice Analytics Inspector for Chrome](https://chrome.google.com/webstore/detail/bazaarvoice-analytics-ins/olmofcadoappjkcnnhomdlnpmpbleekd).
 
-Accompanying the code on the Curations gallery page, is code associated with the conversion event. Bazaarvoice supports various definitions of conversion, both  non-commercial conversion and traditional e-commerce conversion.  By connecting the user's behavior on the product details page to the conversion page, we are able to track the site conversion rate of those who have interacted with user generated content.
+Accompanying the code on the Curations gallery page, is a HTML page simulting conversion. code associated with the conversion event. Bazaarvoice supports various definitions of conversion, both  non-commercial conversion and traditional e-commerce conversion.  By connecting the user's behavior on the product details page to the conversion page, we are able to track the site conversion rate of those who have interacted with user generated content.
 
 After the custom code capturing the different parameters is completed and associated with HTML event, the final step is a simple call using the [Bazaarvoice API Tracker library](http://analytics-static.ugc.bazaarvoice.com/prod/static/latest/bv-analytics.js). This is injected onto the page by the Bazaarvoice scoutfile, which is required. To find out more, contact us at developeradvocate@bazaarvoice.com.
 
