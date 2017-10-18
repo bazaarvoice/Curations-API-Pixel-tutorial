@@ -90,23 +90,23 @@ The [conversion page](http://api-analytics-kit.bazaarvoice.com/conversion.html) 
 
 Hosted Sample:
 ---------------
-In addition to providing the starter kit for download, a tutorial is hosted for client interaction.
+In addition to providing the starter kit for download, a [hosted Curations API Analytics tutorial](http://api-curations-analytics-kit.bazaarvoice.com/) is provided.
 
-First, download and install the [Bazaarvoice Analytics Inspector for Chrome](https://chrome.google.com/webstore/detail/bazaarvoice-analytics-ins/olmofcadoappjkcnnhomdlnpmpbleekd).  Once install you will see the Analytics Inspector icon in the Chrome browser.
+Download and install the [Bazaarvoice Analytics Inspector for Chrome](https://chrome.google.com/webstore/detail/bazaarvoice-analytics-ins/olmofcadoappjkcnnhomdlnpmpbleekd).  Once install you will see the Analytics Inspector icon in the Chrome browser.
 
 <img width=30% alt="Bazaarvoice Analytics Inspector browser extenstion" src="https://cloud.githubusercontent.com/assets/2584258/11514761/c7948e42-983f-11e5-8b90-a3f724da7475.jpg">
 
-Next, visit the product description page [hosted Curations API Analytics tutorial](http://api-curations-analytics-kit.bazaarvoice.com/). Open the [Bazaarvoice Analytics Inspector](https://chrome.google.com/webstore/detail/bazaarvoice-analytics-ins/olmofcadoappjkcnnhomdlnpmpbleekd) and interact with the page. The tool documents each time an analytics event is captured and sent to Bazaarvoice. Notice the red counter on the icon.
+Visit the [Curations gallery page](http://api-curations-analytics-kit.bazaarvoice.com/). Open the [Bazaarvoice Analytics Inspector](https://chrome.google.com/webstore/detail/bazaarvoice-analytics-ins/olmofcadoappjkcnnhomdlnpmpbleekd) and interact with the page. The tool documents each time an analytics event is captured and sent to Bazaarvoice. Notice the red counter on the icon.
 
 <img width=30% alt="Bazaarvoice Analytics Inspector browser extenstion" src="https://cloud.githubusercontent.com/assets/2584258/11639298/b2339294-9cf1-11e5-8e5a-2cd59183dd44.jpg">
 
-Click and expand the different Curation images. Notice Feature events being populated. Event handlers are attached to several HTML inputs which in-turn queue the analytics code.
+Click and expand the different Curation images. Diffent feature events being populated. Event handlers are attached to several HTML, inputs which in-turn queue the analytics code.
 
-<img width=40% alt="product details page, api analytics inspector" src="https://cloud.githubusercontent.com/assets/2584258/11515432/7e035c6e-9843-11e5-917b-f607973a2297.png">
+<img width=40% alt="curations gallery, api analytics inspector" src="https://user-images.githubusercontent.com/2584258/31735668-36c55536-b408-11e7-88cb-88fb13a351f5.png">
 
 Also available within the hosted site is a sample [conversion](http://api-curations-analytics-kit.bazaarvoice.com/confirmation) page. Again open the page in a browser with the [Bazaarvoice Analytics Inspector](https://chrome.google.com/webstore/detail/bazaarvoice-analytics-ins/olmofcadoappjkcnnhomdlnpmpbleekd) open. The analytics on this page are executed on page load. There are several options available for defining and capturing conversion events. Conversion is described in detail in the [conversion analytics tags](https://developer.bazaarvoice.com/curations-api/bv-pixel/transaction-conversion-overview) section.
 
-<img width=40% alt="conversion page, api analytics inspector" src="https://cloud.githubusercontent.com/assets/2584258/11515431/7e01aaa4-9843-11e5-9b76-3ac6934dbc8a.png">
+<img width=40% alt="curations conversion page, api analytics inspector" src="https://user-images.githubusercontent.com/2584258/31735713-60de75be-b408-11e7-8627-43904953b2a8.png">
 
 Things to Note
 ----------------
