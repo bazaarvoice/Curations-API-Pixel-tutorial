@@ -39,9 +39,9 @@ After the custom code capturing the different parameters is completed and associ
 
 The scout file, bv.js file send the analytics data to Bazaarvoice servers after collecting from the product details page and the user defined 'conversion' page.
 
-#### Sample Product Details Page
+#### Sample Curations Gallery
 
-The javascript on the [sample product description page](http://api-analytics-kit.bazaarvoice.com/) listens for different events. The API Analytics code executes when they occur. The required analytics tags are required for each Bazaarvoice API instance.
+The javascript on the sample [Curations Gallery page](http://api-curations-analytics-kit.bazaarvoice.com/) listens for different events. The API Analytics code executes when they occur. The required analytics tags are required for each Bazaarvoice API instance.
 
 ##### [Page View Product](https://developer.bazaarvoice.com/apis/conversations/tutorials/analytics#page-view-product)
 
@@ -61,32 +61,21 @@ ___
 
 ##### [Feature Used](https://developer.bazaarvoice.com/apis/conversations/tutorials/analytics#feature-used-in-view)
 
-Event handlers are also attached to the various CGC inputs. This aims to capture how users interact with the Conversations data. In order to complete this.
+Event handlers are also attached to the various CGC inputs. This aims to capture how users interact with the Conversations data. 
 
-Included in the sample are:
-1. Clicking "Show/Hide Filter"
-2. Selecting an Age or Gender sub-filter
-3. Clicking "Write a Review"
-4. Interacting with the "Sort"
-5. Expanding/contracting the "Read more/less"
-6. Voting if the review was helpful
-7. Reporting the review
-8. Clicking the pagination
-9. Clicking the "See All" button
-10. Clicking the "Staff" button
+Load More, view an author's profile, feature expand, feature dismiss,
+
 
 ___
 
 
 #### Conversion Page
 
-The [conversion page](http://api-analytics-kit.bazaarvoice.com/conversion.html) simulates a page a user would reach upon completing a purchase. With conversion complete, the conversion analytic tags are executed. Both the '[ConversionTransaction](https://github.com/bazaarvoice/api-analytics/blob/master/js/conversion.js#L32-L33)' and the '[PIIConversionTransaction](https://github.com/bazaarvoice/api-analytics/blob/master/js/conversion.js#L32-L33)' are called in this sample. At a minimim one of the three conversion tags must be included in each Bazaarvoice API instance.
+The [conversion page](http://api-curations-analytics-kit.bazaarvoice.com/confirmation) simulates a page a user would reach upon completing a purchase. With conversion complete, the conversion analytic tags are executed. Both the '[ConversionTransaction](https://github.com/bazaarvoice/Curations-API-Pixel-tutorial/blob/master/src/analyticsHelper.js#L61)' and the PIIConversionTransaction are called in this sample. At a minimim one of the three conversion tags must be included in each Bazaarvoice API instance.
 
-##### [ConversionTransaction](https://developer.bazaarvoice.com/apis/conversations/tutorials/analytics#conversion-transaction)
+##### [ConversionTransaction](https://developer.bazaarvoice.com/curations-api/bv-pixel/transaction-conversion-overview/ecommerce-transactions)
 
-##### [PIIConversionTransaction](https://developer.bazaarvoice.com/apis/conversations/tutorials/analytics#conversion-transaction-with-pii)
-
-##### [Non Transactional Conversion](https://developer.bazaarvoice.com/apis/conversations/tutorials/analytics#non-commercial-conversion-transaction)
+##### [Non Transactional Conversion](https://developer.bazaarvoice.com/curations-api/bv-pixel/transaction-conversion-overview/non-commerce-conversions)
 
 Hosted Sample:
 ---------------
