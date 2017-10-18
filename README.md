@@ -25,45 +25,19 @@ npm install
 ```sh
 npm start
 ```
+4. The application should open in a browser using the address "http://localhost:3000/"
 
 What is the sample doing?
 -------------------------
-This tutorial captures a user's actions on the product details page.  Accompanying the code on the product details page, is code associated with the conversion event. Bazaarvoice supports various definitions of conversion, both  non-commercial conversion and traditional e-commerce conversion.  By connecting the user's behavior on the product details page to the conversion page, we are able to track the site conversion rate of those who have interacted with user generated content.
+The sample makes an REST API call to the Curations enpoint and iterates over the results and builds an HTML grid.  Upon rendering the page, the [analytics impression event](https://developer.bazaarvoice.com/curations-api/bv-pixel/product-display-page-overview/passive-analytic-events#trackimpression()) is executed. As a user interacts with the HTML page (i.e. invoke a modal of the image) the correct [feature used](https://developer.bazaarvoice.com/curations-api/bv-pixel/product-display-page-overview/featured-used-events) are shown. 
 
-All this is accomplished by adding code that captures how user's interact with the consumer generated content. User events (e.g. viewing the page, scrolling the page, and interacting with the different web inputs) should all be captured within the site.  Attaching client-side javascript code to these different events is the responsibility of the site developer.
+All the analytics events are captured in the [Bazaarvoice Analytics Inspector for Chrome](https://chrome.google.com/webstore/detail/bazaarvoice-analytics-ins/olmofcadoappjkcnnhomdlnpmpbleekd).
+
+Accompanying the code on the Curations gallery page, is code associated with the conversion event. Bazaarvoice supports various definitions of conversion, both  non-commercial conversion and traditional e-commerce conversion.  By connecting the user's behavior on the product details page to the conversion page, we are able to track the site conversion rate of those who have interacted with user generated content.
 
 After the custom code capturing the different parameters is completed and associated with HTML event, the final step is a simple call using the [Bazaarvoice API Tracker library](http://analytics-static.ugc.bazaarvoice.com/prod/static/latest/bv-analytics.js). This is injected onto the page by the Bazaarvoice scoutfile, which is required. To find out more, contact us at developeradvocate@bazaarvoice.com.
 
-The tracking code requires 2 arguments:
-<ul>
-    <li>the tag name</li>
-    <li>an object containing the key/value pairs. </li>
-</ul>
-
-The following samples demonstrate some of the analytic calls:
-```js
-    BV.pixel.trackViewedCGC(InViewData, {
-      minPixels: 100,
-      minTime: 5000,
-      containerId: 'CGC_Container'
-    });
-
-    BV.pixel.trackEvent('Feature', {
-        type: 'Used',
-        name: name,
-        brand: featureObject.brand,
-        productId: featureObject.productId,
-        bvProduct: null,
-        categoryId: featureObject.categoryId,
-        detail1: detail1,
-        detail2: detail2
-    });
-
-    BV.pixel.trackConversion(conversionData);
-    BV.pixel.trackTransaction(transactionData);
-```
-
-The [bv-analytics.js](http://analytics-static.ugc.bazaarvoice.com/prod/static/latest/bv-analytics.js) file send the analytics data to Bazaarvoice servers after collecting from the product details page and the user defined 'conversion' page.
+The scout file, bv.js file send the analytics data to Bazaarvoice servers after collecting from the product details page and the user defined 'conversion' page.
 
 #### Sample Product Details Page
 
@@ -116,29 +90,26 @@ The [conversion page](http://api-analytics-kit.bazaarvoice.com/conversion.html) 
 
 Hosted Sample:
 ---------------
-In addition to providing the starter kit for download, the tutorial is hosted for client interaction.
+In addition to providing the starter kit for download, a tutorial is hosted for client interaction.
 
 First, download and install the [Bazaarvoice Analytics Inspector for Chrome](https://chrome.google.com/webstore/detail/bazaarvoice-analytics-ins/olmofcadoappjkcnnhomdlnpmpbleekd).  Once install you will see the Analytics Inspector icon in the Chrome browser.
 
 <img width=30% alt="Bazaarvoice Analytics Inspector browser extenstion" src="https://cloud.githubusercontent.com/assets/2584258/11514761/c7948e42-983f-11e5-8b90-a3f724da7475.jpg">
 
-Next, visit the product description page [hosted API Analytics solutions](http://api-analytics-kit.bazaarvoice.com/). Open the [Bazaarvoice Analytics Inspector](https://chrome.google.com/webstore/detail/bazaarvoice-analytics-ins/olmofcadoappjkcnnhomdlnpmpbleekd) and interact with the page. The tool documents each time an analytics event is captured and sent to Bazaarvoice. Notice the red counter on the icon.
+Next, visit the product description page [hosted Curations API Analytics tutorial](http://api-curations-analytics-kit.bazaarvoice.com/). Open the [Bazaarvoice Analytics Inspector](https://chrome.google.com/webstore/detail/bazaarvoice-analytics-ins/olmofcadoappjkcnnhomdlnpmpbleekd) and interact with the page. The tool documents each time an analytics event is captured and sent to Bazaarvoice. Notice the red counter on the icon.
 
 <img width=30% alt="Bazaarvoice Analytics Inspector browser extenstion" src="https://cloud.githubusercontent.com/assets/2584258/11639298/b2339294-9cf1-11e5-8e5a-2cd59183dd44.jpg">
 
-Scroll and click different HTML inputs. Notice Feature events being populated. Event handlers are attached to several HTML inputs which in-turn queue the analytics code.
+Click and expand the different Curation images. Notice Feature events being populated. Event handlers are attached to several HTML inputs which in-turn queue the analytics code.
 
 <img width=40% alt="product details page, api analytics inspector" src="https://cloud.githubusercontent.com/assets/2584258/11515432/7e035c6e-9843-11e5-917b-f607973a2297.png">
 
-Also available within the hosted site is a sample [conversion](http://api-analytics-kit.bazaarvoice.com/conversion.html) page. Again open the page in a browser with the [Bazaarvoice Analytics Inspector](https://chrome.google.com/webstore/detail/bazaarvoice-analytics-ins/olmofcadoappjkcnnhomdlnpmpbleekd) open. The analytics on this page are executed on page load. There are several options available for defining and capturing conversion events. Conversion is described in detail in the [conversion analytics tags](https://developer.bazaarvoice.com/apis/conversations/tutorials/analytics#conversion-analytics-tags) section.
+Also available within the hosted site is a sample [conversion](http://api-curations-analytics-kit.bazaarvoice.com/confirmation) page. Again open the page in a browser with the [Bazaarvoice Analytics Inspector](https://chrome.google.com/webstore/detail/bazaarvoice-analytics-ins/olmofcadoappjkcnnhomdlnpmpbleekd) open. The analytics on this page are executed on page load. There are several options available for defining and capturing conversion events. Conversion is described in detail in the [conversion analytics tags](https://developer.bazaarvoice.com/curations-api/bv-pixel/transaction-conversion-overview) section.
 
 <img width=40% alt="conversion page, api analytics inspector" src="https://cloud.githubusercontent.com/assets/2584258/11515431/7e01aaa4-9843-11e5-9b76-3ac6934dbc8a.png">
 
-Console logs are displayed because within the [hosted API Analytics solutions](http://api-analytics-kit.bazaarvoice.com/) the 'environment' variable is set to ['staging'](https://github.com/bazaarvoice/api-analytics/blob/master/js/main.js#L3). This flag is used in the js code to enable console.logs. When the 'environment' flag is set to anything else (including the other accepted value 'production') logging will not occur.
-
 Things to Note
 ----------------
-This sample does not make API calls to retrieve and bind client data. Values that should be obtained from the API are hard coded in the HTML and js files. Comments have been added where the values should be obtained from the API.
 
 The sample works in conjunction with the [Bazaarvoice Analytics Inspector](https://chrome.google.com/webstore/detail/bazaarvoice-analytics-ins/olmofcadoappjkcnnhomdlnpmpbleekd) to aid clients in making sure the implementation is complete.
 
