@@ -6,12 +6,12 @@ The Curations API Pixel tutorial demonstrates the correct API analytic events th
 Before Downloading:
 -------------
 
-The Curations API Pixel tutorial is built using the [create-react-app](https://github.com/facebookincubator/create-react-app) framework. User should familiarize themselves with the code base.  
+The Curations API Pixel tutorial is built using the [create-react-app](https://github.com/facebookincubator/create-react-app) framework. User should familiarize themselves with that code base.  
 
 1. Note that implementing the API Analytics Tags is required according to the [Curations API terms and conditions]()
 2. Read the [Curations API Analytics tutorial](https://developer.bazaarvoice.com/curations-api/bv-pixel) documentation.
 3. Install the [Bazaarvoice Analytics Inspector for Chrome](https://chrome.google.com/webstore/detail/bazaarvoice-analytics-ins/olmofcadoappjkcnnhomdlnpmpbleekd).
-4. Realize that the starter kit is meant as a sample and by no means optimized for speed and scale. The code is provided as a means to help API users better understand the required analytics for Curations API users.
+4. Realize that the tutorial is meant as a sample, and by no means optimized for speed and scale. The code is provided as a means to help API users better understand the required analytics for Curations API users.
 
 How it run locally:
 -------------------
@@ -29,53 +29,19 @@ npm start
 
 What is the sample doing?
 -------------------------
-The sample makes an REST API call to the Curations enpoint and iterates over the results and builds an Curations image grid.  Upon rendering the page, several [analytics impression events](https://developer.bazaarvoice.com/curations-api/bv-pixel/product-display-page-overview/passive-analytic-events#trackimpression()) are executed. As a user interacts with the HTML page (i.e. invoke a modal of the image) the correct [feature used](https://developer.bazaarvoice.com/curations-api/bv-pixel/product-display-page-overview/featured-used-events) are shown. 
+This sample makes a REST API call to the Curations endpoint then iterates over the results and builds an image grid.  Upon rendering the Curations image grid in the browser, several [analytics impression events](https://developer.bazaarvoice.com/curations-api/bv-pixel/product-display-page-overview/passive-analytic-events#trackimpression()) are executed. Also, a user interacts with the images in the Curations grid (i.e. invoke a modal of the image), the correct [feature used](https://developer.bazaarvoice.com/curations-api/bv-pixel/product-display-page-overview/featured-used-events) analytics are executed. 
 
-All the analytics events are captured in the [Bazaarvoice Analytics Inspector for Chrome](https://chrome.google.com/webstore/detail/bazaarvoice-analytics-ins/olmofcadoappjkcnnhomdlnpmpbleekd).
+The analytics events are captured and displayed in the [Bazaarvoice Analytics Inspector for Chrome](https://chrome.google.com/webstore/detail/bazaarvoice-analytics-ins/olmofcadoappjkcnnhomdlnpmpbleekd).
 
-Accompanying the code on the Curations gallery page, is a HTML page simulting conversion. code associated with the conversion event. Bazaarvoice supports various definitions of conversion, both  non-commercial conversion and traditional e-commerce conversion.  By connecting the user's behavior on the product details page to the conversion page, we are able to track the site conversion rate of those who have interacted with user generated content.
+Accompanying the code on the Curations image grid, is a HTML page simulting a [conversion event](http://api-curations-analytics-kit.bazaarvoice.com/confirmation) such as a product purchase. Bazaarvoice allows users to create their own definition of conversion, both  non-commercial conversion and traditional e-commerce conversion.  By connecting the user's behavior on the product details page to the conversion page, we are able to track the site conversion rate of those who have interacted with user generated content.
 
-After the custom code capturing the different parameters is completed and associated with HTML event, the final step is a simple call using the [Bazaarvoice API Tracker library](http://analytics-static.ugc.bazaarvoice.com/prod/static/latest/bv-analytics.js). This is injected onto the page by the Bazaarvoice scoutfile, which is required. To find out more, contact us at developeradvocate@bazaarvoice.com.
+The scout file, bv.js, that send the analytics data to Bazaarvoice servers after collecting data must also be present on all pages where analytics are collected. 
 
-The scout file, bv.js file send the analytics data to Bazaarvoice servers after collecting from the product details page and the user defined 'conversion' page.
+#### Sample Curations Image Gallery
 
-#### Sample Curations Gallery
-
-The javascript on the sample [Curations Gallery page](http://api-curations-analytics-kit.bazaarvoice.com/) listens for different events. The API Analytics code executes when they occur. The required analytics tags are required for each Bazaarvoice API instance.
-
-##### [Page View Product](https://developer.bazaarvoice.com/apis/conversations/tutorials/analytics#page-view-product)
-
-Each time a product details page is rendered, the transaction analytics tag '[page view product](https://developer.bazaarvoice.com/apis/conversations/tutorials/analytics#page-view-product)' is executed. In this sample, the '[page view product](https://github.com/bazaarvoice/api-analytics/blob/master/js/main.js#L51-L53)' is associated with the page load event.  When page load is complete, the analytics code is called and passes an object. The object's key/values pairs are [hard coded](https://github.com/bazaarvoice/api-analytics/blob/master/js/main.js#L2-L14) and are not obtained from a Conversations API call.
+The javascript on the sample [Curations Gallery page](http://api-curations-analytics-kit.bazaarvoice.com/) listens for different events. The API Analytics code executes when they occur. The [required analytics tags](https://developer.bazaarvoice.com/curations-api/bv-pixel/required-curations-analytics) for the Curations API are detailsed [here](https://developer.bazaarvoice.com/curations-api/bv-pixel/required-curations-analytics). 
 
 ___
-
-
-##### [Feature Used in View](https://developer.bazaarvoice.com/apis/conversations/tutorials/analytics#feature-used-in-view)
-
-Not all Product Details Pages have Consumer Generated Content (CGC) within the browser's viewable area when the page is rendered.  Often, users must scroll to view the CGC. As part of the API Analytics requirements, when the CGC comes in view, must also be captured. This is done by calling the transactional analytics tag '[feature used in view](https://github.com/bazaarvoice/api-analytics/blob/master/js/main.js#L46)'.  This object's key/value pairs differs slightly from the previous 'page view product' by:
-1. having additional keys that identify the CGC container Id
-2. allow to specify the minimum pixel height that must be viewed before executing
-3. specifying a time (milliseconds) the CGC container must be viewed before executing
-
-___
-
-##### [Feature Used](https://developer.bazaarvoice.com/apis/conversations/tutorials/analytics#feature-used-in-view)
-
-Event handlers are also attached to the various CGC inputs. This aims to capture how users interact with the Conversations data. 
-
-Load More, view an author's profile, feature expand, feature dismiss,
-
-
-___
-
-
-#### Conversion Page
-
-The [conversion page](http://api-curations-analytics-kit.bazaarvoice.com/confirmation) simulates a page a user would reach upon completing a purchase. With conversion complete, the conversion analytic tags are executed. Both the '[ConversionTransaction](https://github.com/bazaarvoice/Curations-API-Pixel-tutorial/blob/master/src/analyticsHelper.js#L61)' and the PIIConversionTransaction are called in this sample. At a minimim one of the three conversion tags must be included in each Bazaarvoice API instance.
-
-##### [ConversionTransaction](https://developer.bazaarvoice.com/curations-api/bv-pixel/transaction-conversion-overview/ecommerce-transactions)
-
-##### [Non Transactional Conversion](https://developer.bazaarvoice.com/curations-api/bv-pixel/transaction-conversion-overview/non-commerce-conversions)
 
 Hosted Sample:
 ---------------

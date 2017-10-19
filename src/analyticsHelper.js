@@ -90,6 +90,4 @@ export function conversion() {
    
   BV.pixel.trackTransaction(TransactionData);
 
-
-
 }
