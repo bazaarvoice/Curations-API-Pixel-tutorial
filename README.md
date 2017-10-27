@@ -33,13 +33,13 @@ This sample makes a REST API call to the Curations endpoint then iterates over t
 
 The analytics events are captured and displayed in the [Bazaarvoice Analytics Inspector for Chrome](https://chrome.google.com/webstore/detail/bazaarvoice-analytics-ins/olmofcadoappjkcnnhomdlnpmpbleekd).
 
-Accompanying the code on the Curations image grid, is a HTML page simulting a [conversion event](http://api-curations-analytics-kit.bazaarvoice.com/confirmation) such as a product purchase. Bazaarvoice allows users to create their own definition of conversion, both  non-commercial conversion and traditional e-commerce conversion.  By connecting the user's behavior on the product details page to the conversion page, we are able to track the site conversion rate of those who have interacted with user generated content.
+Accompanying the code on the Curations image grid, is a HTML page simulating a [conversion event](http://api-curations-analytics-kit.bazaarvoice.com/confirmation) such as a product purchase. Bazaarvoice allows users to create their own definition of conversion, both  non-commercial conversion and traditional e-commerce conversion.  By connecting the user's behavior on the product details page to the conversion page, we are able to track the site conversion rate of those who have interacted with user generated content.
 
 The scout file, bv.js, that send the analytics data to Bazaarvoice servers after collecting data must also be present on all pages where analytics are collected. 
 
 #### Sample Curations Image Gallery
 
-The javascript on the sample [Curations Gallery page](http://api-curations-analytics-kit.bazaarvoice.com/) listens for different events. The API Analytics code executes when they occur. The [required analytics tags](https://developer.bazaarvoice.com/curations-api/bv-pixel/required-curations-analytics) for the Curations API are detailsed [here](https://developer.bazaarvoice.com/curations-api/bv-pixel/required-curations-analytics). 
+The javascript on the sample [Curations Gallery page](http://api-curations-analytics-kit.bazaarvoice.com/) listens for different events. The API Analytics code executes when they occur. The [required analytics tags](https://developer.bazaarvoice.com/curations-api/bv-pixel/required-curations-analytics) for the Curations API are detailed [here](https://developer.bazaarvoice.com/curations-api/bv-pixel/required-curations-analytics). 
 
 ___
 
@@ -55,7 +55,7 @@ Visit the [Curations gallery page](http://api-curations-analytics-kit.bazaarvoic
 
 <img width=30% alt="Bazaarvoice Analytics Inspector browser extenstion" src="https://cloud.githubusercontent.com/assets/2584258/11639298/b2339294-9cf1-11e5-8e5a-2cd59183dd44.jpg">
 
-Click and expand the different Curation images. Diffent feature events being populated. Event handlers are attached to several HTML, inputs which in-turn queue the analytics code.
+Click and expand the different Curation images. Different feature events being populated. Event handlers are attached to several HTML, inputs which in-turn queue the analytics code.
 
 <img width=40% alt="curations gallery, api analytics inspector" src="https://user-images.githubusercontent.com/2584258/31735668-36c55536-b408-11e7-88cb-88fb13a351f5.png">
 
